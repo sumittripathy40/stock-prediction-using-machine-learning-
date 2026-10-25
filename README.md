@@ -31,13 +31,6 @@ The forecast uses only the `Date` and `Close` columns.
 3. Use a Python environment with `pandas`, `plotly`, and the notebook's `fbprophet` import available. The repository does not include pinned dependency versions.
 4. Run the notebook cells in order. In Colab, the final cell downloads the generated `forecast.csv`.
 
-## Screenshots
-
-Add screenshots when available. Suggested images:
-
-- **Historical price and volume charts:** _Add screenshot here_
-- **Prophet forecast and components:** _Add screenshot here_
-
 ## Notes
 
 - The included CSV is a static historical sample; the notebook does not fetch live market data.
