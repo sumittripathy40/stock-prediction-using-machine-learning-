@@ -1,13 +1,45 @@
-# stock-prediction-using-machine-learning-
-PROBLEM:-
-HERE I HAVE DEVELOPED A MACHINE LEARNING MODEL TO PREDICT THE STOCK PRICE
+# Tesla Stock Price Forecasting with Prophet
 
-OBJECTIVE:-
-1.Creating a Facebook Prophet Model & Forecasting the stock price of Tesla 30 days into the future
+[![Open in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sumittripathy40/stock-prediction-using-machine-learning-/blob/main/Learner_Notebook_prophet.ipynb)
 
-2.Data Visualization using Plotly express
+A Jupyter notebook that explores historical Tesla (TSLA) prices and uses Facebook Prophet to forecast the closing price 30 days beyond the available data.
 
-3.Stock Analysis & Forecast evaluation using Google Finance in Google Sheets 
+## What the notebook does
 
-WHY FACEBOOK PROPHET:-
-It is open for collaboration, and people are free to make pull requests to improve it further. One major advantage with Prophet is that it does not require much prior knowledge of forecasting time series data as it can automatically find seasonal trends with a set of data and offers easy to understand parameters.
+- Loads and summarizes the included TSLA historical stock data.
+- Visualizes closing prices and trading volume with Plotly Express, including line, area, bar, and box charts.
+- Prepares the data for Prophet by mapping `Date` to `ds` and `Close` to the target `y`.
+- Fits Prophet with its default model configuration and generates a 30-day forecast.
+- Plots the forecast and Prophet components, then exports the forecast as `forecast.csv` from Google Colab.
+
+## Repository files
+
+| File | Description |
+| --- | --- |
+| [`Learner_Notebook_prophet.ipynb`](Learner_Notebook_prophet.ipynb) | Notebook for data exploration, visualization, forecasting, and export. |
+| [`TSLA(12).csv`](https://github.com/sumittripathy40/stock-prediction-using-machine-learning-/blob/main/TSLA%2812%29.csv) | Historical daily TSLA data: 252 rows dated July 12, 2021 through July 11, 2022. Columns: `Date`, `Open`, `High`, `Low`, `Close`, `Adj Close`, and `Volume`. |
+
+The forecast uses only the `Date` and `Close` columns.
+
+## Setup and run
+
+1. Open `Learner_Notebook_prophet.ipynb` in Google Colab using the badge above.
+2. Make the CSV available to the notebook as `TSLA.csv`. The file in this repository is named `TSLA(12).csv`, so either rename it after uploading or change the notebook's `read_csv` line to:
+   ```python
+   df = pd.read_csv("TSLA(12).csv")
+   ```
+3. Use a Python environment with `pandas`, `plotly`, and the notebook's `fbprophet` import available. The repository does not include pinned dependency versions.
+4. Run the notebook cells in order. In Colab, the final cell downloads the generated `forecast.csv`.
+
+## Screenshots
+
+Add screenshots when available. Suggested images:
+
+- **Historical price and volume charts:** _Add screenshot here_
+- **Prophet forecast and components:** _Add screenshot here_
+
+## Notes
+
+- The included CSV is a static historical sample; the notebook does not fetch live market data.
+- The notebook contains saved output from a different date range than the checked-in CSV. Rerun the cells with the included data to refresh the displayed results.
+- The notebook does not include a train/test split, backtest, or forecast accuracy metrics.
